@@ -1,0 +1,8 @@
+@startuml
+:User: as user
+user -> (login)
+note top of (login) : after filling the details  
+(login) ----|> (login) : login->fails (inappropriate details)
+(login) --|> (home) : if login fails 3 times
+user --> (home) : if user selects cancel
+@enduml

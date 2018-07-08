@@ -1,0 +1,296 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>staTwig</title>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700i">
+      <link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  		<!--script src="./js/tracking.js"-->
+    <!--/script-->
+      <script src="https://code.jquery.com/jquery.min.js"></script>
+      <link rel="stylesheet" src="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel"/>
+      <script src="./js/plugin_circle.js"></script>
+      <script src="./js/script_circle.js"></script>
+      <link rel="stylesheet" href="./css/wallet.css">
+    </head>
+    <body>
+
+      <!--navbar-->
+      <div id="throbber" style="display:none; min-height:120px;"></div>
+  <div id="noty-holder"></div>
+  <div id="wrapper">
+      <!-- Navigation -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+  						<a href="../packagePage" class="navbar-brand" >
+  								<p id="menu-toggle" style="margin-top:20%">TwigCore</p>
+  						</a>
+          </div>
+          <!-- Top Menu Items -->
+          <ul class="nav navbar-right top-nav">
+            <li><a href="../wallet" data-placement="bottom" data-toggle="tooltip" data-original-title="Stats"><i class="#">Wallet</i>
+                </a>
+            </li>
+            <li><a href="../packagePage" data-placement="bottom" data-toggle="tooltip" data-original-title="Stats"><i class="#">BlockChain</i>
+                </a>
+            </li>
+            <li><a href="../packageManagement" data-placement="bottom" data-toggle="tooltip" data-original-title="Stats"><i class="#">Package Management</i>
+                </a>
+            </li>
+						<li><a href="./admin/settings" class="btn btn-success"><span class="glyphicon settings" aria-hidden="true"> </span>Console</a></li>
+            <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin User <b class="fa fa-angle-down"></b></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
+                      <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
+                      <li class="divider"></li>
+                      <li><a href="../"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+                  </ul>
+              </li>
+          </ul>
+          <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+          <div class="collapse navbar-collapse navbar-ex1-collapse" id="collapse_wrapper">
+              <ul class="nav navbar-nav side-nav">
+                  <!-- <li>
+                      <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-search"></i> MENU 1 <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                      <ul id="submenu-1" class="collapse">
+                          <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.1</a></li>
+                          <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.2</a></li>
+                          <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.3</a></li>
+                      </ul>
+                  </li> -->
+                  <!-- <li>
+                      <a href="#" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-star"></i>  MENU 2 <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                      <ul id="submenu-2" class="collapse">
+                          <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 2.1</a></li>
+                          <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 2.2</a></li>
+                          <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 2.3</a></li>
+                      </ul>
+                  </li> -->
+                  <li>
+                      <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-fw fa fa-bitcoin"></i>  ADD BALANCE</a>
+                  </li>
+                  <li>
+                      <a href="#" data-toggle="modal" data-target="#myModalOne"><i class="fa fa-fw fa-paper-plane-o"></i> ADD ASSOCIATE</a>
+                  </li>
+                  <li>
+                        <a href="#" data-toggle="modal" data-target="#myModalTwo" ><i class="fa fa-bookmark" aria-hidden="true"></i> TRANSFER POINTS</a>
+                  </li>
+              </ul>
+          </div>
+          <!-- /.navbar-collapse -->
+      </nav>
+
+      <div id="page-wrapper">
+          <div class="container-fluid">
+              <!-- Page Heading -->
+              <div class="row" id="main" >
+                  <div class="col-sm-12 col-md-12 well" id="content">
+                  </div>
+              </div>
+              <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+      </div>
+      <!-- /#page-wrapper -->
+  </div><!-- /#wrapper -->
+
+
+  <!-- modals start-->
+
+  <div class="container addBalanceModal">
+  	<div class="row">
+  		<!-- Button trigger modal -->
+  <!-- <button class="btn btn-primary btn-lg"  title="Share this content" data-toggle="modal" data-target="#myModal">
+    <i class="fa fa-share-alt"></i> Share
+  </button> -->
+
+  <!-- Modalzero -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="myModalLabel"><i class="fa fa-bitcoin"></i> Add Balance</h4>
+        </div>
+        <div class="modal-body">
+          <p></p>
+
+          <h2><i class="fa fa-btc"></i> Add Balance</h2>
+
+                  <p>Add the required amount of points.</p>
+
+                  <form action="" method="post">
+                      <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-btc"></i></span>
+    <input type="number" class="form-control" placeholder="1000.000000">
+                      </div>
+                      <br />
+                      <button type="submit" value="add" name="add" class="btn btn-success"><i class="fa fa-share"></i> Add</button>
+                </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  	</div>
+  </div>
+
+<!-- modalOne -->
+
+    <div class="container addAssociatesModal">
+    	<div class="row">
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModalOne" tabindex="-1" role="dialog" aria-labelledby="myModalOneLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalOneLabel"><i class="fa fa-bitcoin"></i> Add Associate</h4>
+          </div>
+          <div class="modal-body">
+            <p></p>
+            <h2><i class="fa fa-btc"></i> Add Associate</h2>
+
+
+                    <form>
+      <label for="associateID"> ADD Associate ID</label>
+      <br />
+      <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-btc"></i></span>
+      <input type="text" id="associateID" name="associateID" placeholder="Id" class="form-control">
+      </div>
+      <br />
+      <label for="associateName">Associate Name</label>
+      <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-btc"></i></span>
+      <input type="text" name="associateName" id="associateName" class="form-control" placeholder="Name">
+    </div>
+    <br />
+      <label for="associateWalletAddress">Associate Wallet Address</label>
+      <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-btc"></i></span>
+      <input type="text" name="associateWalletAddress" id="associateWalletAddress" class="form-control" placeholder="Address">
+                        </div>
+                        <br />
+                        <button type="submit" onclick="addAssociatesJs()" class="btn btn-success"><i class="fa fa-share"></i> Submit</button>
+                  </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    	</div>
+    </div>
+
+    <!-- modalTwo -->
+
+        <div class="container transferPointModal">
+        	<div class="row">
+        <!--Modal -->
+         <div class="modal fade" id="myModalTwo" tabindex="-1" role="dialog" aria-labelledby="myModalTwoLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalTwoLabel"></h4>
+              </div>
+              <div class="modal-body">
+                <p></p>
+                <h2><i class="fa fa-btc"></i>Transfer Points</h2>
+
+
+          <form>
+          <label for="Amount"> Transfer Amount</label>
+          <br />
+          <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-btc"></i></span>
+          <input type="number" id="Amount" placeholder="1000" class="form-control">
+          </div>
+          <br />
+          <label for="NatureOfTransaction">Payment Method</label>
+          <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-btc"></i></span>
+          <input type="text" name="NatureOfTransaction" id="NatureOfTransaction" class="form-control" placeholder="Name">
+        </div>
+        <br />
+          <!-- <label for="associateWalletAddress">Reason for transfer</label>
+          <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-btc"></i></span>
+          <input type="text" name="associateWalletAddress" id="associateWalletAddress" class="form-control" placeholder="Address">
+                            </div> -->
+                            <br />
+                      </form>
+                      <button id="addTransactionButton" type="button" class="btn btn-success"><i class="fa fa-share"></i> Submit</button>
+                      <script type="text/javascript">
+                        $("#addTransactionButton").on('click', function() {
+                          addTransactionJs();
+                        });
+                      </script>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        	</div>
+         </div>
+
+  <!-- circles -->
+    <h1 class="userId"></h1>
+
+      <div class="account_bal">
+        <div class="my-progress-bar" id="circle_0">
+          <h2 id="heading_0" style="display:none">Balance</h2>
+        </div>
+        <div class="my-progress-bar" id="circle_1">
+          <h2 id="heading_1" style="display:none">Available Balance</h2>
+        </div>
+        <div class="my-progress-bar" id="circle_2">
+          <h2 id="heading_2" style="display:none">Locked Balance</h2>
+        </div>
+        <div class="my-progress-bar" id="circle_3">
+          <h2 id="heading_3" style="display:none"> Under Clearance</h2>
+        </div>
+        <!-- <div class="my-progress-bar" id="circle_4">
+          <h2 id="heading_4">Available Balance</h2>
+        </div> -->
+      </div>
+
+      <div class="table">
+      <table id="table" class="table table-hover table-responsive">
+  				<thead>
+  					<tr>
+  						<th class="assoc">Transaction Id</th>
+  						<th class="assoc">Time of Transaction</th>
+  						<th class="assoc">Amount</th>
+              <th class="assoc">Nature of Transaction</th>
+              <th class="assoc">Source Address</th>
+              <th class="assoc">Destination Address</th>
+  					</tr>
+  				</thead>
+  				<tbody id="tbody">
+  				</tbody>
+  		</table>
+    </div>
+
+    </body>
+  </html>

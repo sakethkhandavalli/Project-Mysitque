@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Statwig</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="./js/tracking.js">
+		</script>
+		<link rel="stylesheet" href="./css/style_tracking.css">
+		<script type="text/javascript">
+$(document).ready(function() {
+	fill_blocks();
+	truck_move();
+});
+		</script>
+	</head>
+	<body>
+
+		<div id="throbber" style="display:none; min-height:120px;"></div>
+<div id="noty-holder"></div>
+<div id="wrapper">
+		<!-- Navigation -->
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+						</button>
+						<a href="../packagePage" class="navbar-brand" >
+								<p id="menu-toggle" style="margin-top:20%">TwigCore</p>
+						</a>
+				</div>
+				<!-- Top Menu Items -->
+				<ul class="nav navbar-right top-nav">
+						<li><a href="../wallet" data-placement="bottom" data-toggle="tooltip" data-original-title="Stats"><i class="#">Wallet</i>
+								</a>
+						</li>
+						<li><a href="../packagePage" data-placement="bottom" data-toggle="tooltip" data-original-title="Stats"><i class="#">BlockChain</i>
+								</a>
+						</li>
+						<li><a href="../packageManagement" data-placement="bottom" data-toggle="tooltip" data-original-title="Stats"><i class="#">Package Management</i>
+								</a>
+						</li>
+							<li><a href="./admin/settings" class="btn btn-success"><span class="glyphicon settings" aria-hidden="true"> </span>Console</a></li>
+						<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin User <b class="fa fa-angle-down"></b></a>
+								<ul class="dropdown-menu">
+										<li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
+										<li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
+										<li class="divider"></li>
+										<li><a href="../"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+								</ul>
+						</li>
+				</ul>
+		</nav>
+
+		<div id="page-wrapper">
+				<div class="container-fluid">
+						<!-- Page Heading -->
+						<div class="row" id="main" >
+								<div class="col-sm-12 col-md-12 well" id="content">
+								</div>
+						</div>
+						<!-- /.row -->
+				</div>
+				<!-- /.container-fluid -->
+		</div>
+		<!-- /#page-wrapper -->
+</div><!-- /#wrapper -->
+
+
+		<!--navbar menu-->
+		<!-- <section class="navbar-info">
+
+			<nav class="navbar navbar-default  fixed-me">
+				<div class="container-fluid ">
+
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed menu-collapsed-button" data-toggle="collapse" data-target="#navbar-primary-collapse" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand site-logo" href="#" style="color:white">STATWIG</a>
+					</div>
+
+					<div class="collapse navbar-collapse navbar-right  header-right-menu" id="navbar-primary-collapse">
+						<ul class="nav navbar-nav ">
+							<li class="page-scroll">
+								<a class="header" href="../packagePage" id="blocks" style="color:white;font-size:20px">Packages</a>
+							</li>
+							<li>
+								<a class="" href="../" id="logout" style="color:white;font-size: 20px">Logout</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</section> -->
+		<!-- end of navbar-->
+
+		<h1 class="head1" style="margin-top:7%">Tracking Your Package...</h1>
+		<div class="checks" style="margin-top:2%">
+			<!--div class="c" id = "cm1">
+	   <svg width="150" height="150">
+	   <path id="check" d="M10,30 l30,50 l95,-70" />
+	   </svg>
+	   </div>
+	   <div class="c" id = "cm2">
+	   <svg width="150" height="150">
+	   <path id="check" d="M10,30 l30,50 l95,-70" />
+	   </svg>
+	   </div>
+	   <div class="c" id = "cm3">
+	   <svg width="150" height="150">
+	   </svg>
+	   </div>
+	   <div class="c" id = "cm4">
+	   <svg width="150" height="150">
+	   <path id="check" d="M10,30 l30,50 l95,-70" />
+	   </svg>
+	   </div>
+	   <div class="c" id = "cm5">
+	   <svg width="150" height="150">
+	   <path id="check" d="M10,30 l30,50 l95,-70" />
+	   </svg>
+	   </div-->
+	   </div>
+	   <div class="truck" >
+		   <img src="./img/truck.png" id="truck">
+	   </div>
+		   <div class="pitstops">
+		   </div>
+		   <div class="jumbotron text-center">
+		   </div>
+	</body>
+</html>

@@ -1,0 +1,11 @@
+@startuml
+:Admim: as admin
+admin -> (settings)
+note right of (settings) : extra settings in\n addition to those of the general user
+
+note left of admin : the page displays the blockchain\nof\
+ all blocks belonging to all packages\nof all users
+
+(settings) --> (create blockchain)
+(settings) --> (manage companies)
+@enduml

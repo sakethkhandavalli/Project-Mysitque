@@ -1,0 +1,7 @@
+@startuml
+:Company Admin: as admin
+admin ->(settings) 
+
+note right of (settings) : extra settings in addition\nto those of general user 
+(settings) --> (management of\ncompany users)
+@enduml

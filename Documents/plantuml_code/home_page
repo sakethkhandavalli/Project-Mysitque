@@ -1,0 +1,9 @@
+@startuml
+:User: as user
+user -> (signup)
+(signup) -|> (login)
+user  -> (login)
+user --> (home button)
+user -->(What we do)
+user --> (Contact Us)
+@enduml

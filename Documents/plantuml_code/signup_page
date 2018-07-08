@@ -1,0 +1,7 @@
+@startuml
+:User: as user
+user -> (signup)
+note top of (signup) : after filling the details  
+user --> (home) : if user selects cancel
+(signup) --|> (login) : if signup is successful(decided by admin)
+@enduml

@@ -1,0 +1,40 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor GeneralUser
+actor CompanyAdmin_or_Admin
+actor Redirection << Process >>
+actor Main_Database << Application >>
+rectangle Statwig {
+
+GeneralUser -- (Signup)
+(Signup) -- CompanyAdmin_or_Admin : Approve or decline the request
+(Signup) -- Redirection : signup page
+GeneralUser -- (Login)
+CompanyAdmin_or_Admin -- (Login)
+(Login) -- Redirection : login page
+(Login) -- Main_Database : If General User checks whether registered/not
+GeneralUser -- (Settings)
+CompanyAdmin_or_Admin -- (Settings) : These two have diff. settings
+(Settings) -- Redirection : Logout/Management/Personal
+GeneralUser -- (Add Package)
+CompanyAdmin_or_Admin -- (Add Package)
+(Add Package) -- Main_Database
+(Add Package) -- Redirection : Add-Package page
+GeneralUser -- (Search_Bar)
+CompanyAdmin_or_Admin -- (Search_Bar)
+(Search_Bar) -- Main_Database
+GeneralUser -- (Filtration)
+CompanyAdmin_or_Admin -- (Filtration)
+(Filtration) -- Main_Database
+GeneralUser -- (All Packages)
+CompanyAdmin_or_Admin -- (All Packages)
+(All Packages) -- Redirection : All-Packages page
+GeneralUser -- (Personal Settings)
+CompanyAdmin_or_Admin -- (Personal Settings)
+(Personal Settings) -- Redirection : Per. settings page
+GeneralUser -- (All Blocks)
+CompanyAdmin_or_Admin -- (All Blocks)
+(All Blocks) -- Redirection : All blocks page
+}
+@enduml

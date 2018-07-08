@@ -1,0 +1,6 @@
+@startuml
+:User: as user
+note left of user :Package tracking page
+user --> (search bar\nto search for a particular\nblock or package)
+user --> (all blocks)
+@enduml

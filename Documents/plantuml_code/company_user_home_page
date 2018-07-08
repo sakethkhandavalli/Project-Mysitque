@@ -1,0 +1,8 @@
+@startuml
+:Company user: as user
+user ->(settings) 
+
+note right of (settings) : extra settings in addition\nto those of general 
+user --> (view blocks/chain/\nadd blocks)
+note right of (view blocks/chain/\nadd blocks) : if the user has the permissions\nfrom the company admin
+@enduml

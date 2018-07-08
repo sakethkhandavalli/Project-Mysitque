@@ -1,0 +1,6 @@
+@startuml
+:User: as user
+user --> (search bar) 
+note left of (search bar) : to find a particular block
+user --> (filtration)
+@enduml
